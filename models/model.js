@@ -5,8 +5,9 @@ const pool = mariadb.createPool({
   host: "localhost",
   user: "root",
   password: "1234",
-  database: "misrecetas"
-})
+  database: "misrecetas",
+  port: 3306
+});
 
 const getRecipe = async () => {
   let conn;
@@ -17,7 +18,7 @@ const getRecipe = async () => {
     );
 
     return rows;
-  } catch (error) {
+  } catch (error){
   } finally {
     if (conn) conn.release();
   }
@@ -98,5 +99,5 @@ module.exports = {
   getRecipeById,
   createRecipe,
   updateRecipe,
-  deleteRecipe,
+  deleteRecipe
 };

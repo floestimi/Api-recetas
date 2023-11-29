@@ -3,7 +3,7 @@ const model = require("../models/model");
 
 const usuarios = require('../jsons/users.json');
 const jwt = require('jsonwebtoken');
-const key = 'clave';
+const key = 'mi-clave-secreta';
 
 const getRecipe = async (req, res) => {
   const recetas = await model.getRecipe();
